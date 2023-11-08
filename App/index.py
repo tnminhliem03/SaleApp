@@ -12,4 +12,5 @@ def index():
     return render_template('index.html', categories = cates, products = products)
 
 if __name__ == '__main__':
+    from App import admin
     app.run(debug=True)
