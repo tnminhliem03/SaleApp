@@ -9,10 +9,6 @@ class Category(db.Model):
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(50), nullable=False, unique=True)
     products = relationship('Product', backref='category', lazy=True)
-<<<<<<< HEAD
-
-=======
->>>>>>> 33daaebf4c1d056d1a53ade8b6fd1f89ac3707b3
     def __str__(self):
         return self.name
 
@@ -51,7 +47,6 @@ if __name__ == '__main__':
         # db.session.add_all([c1, c2, c3, c4])
         # db.session.commit()
 
-<<<<<<< HEAD
         # p1 = Product(name='Samsung Galaxy Fold5', price='51.990.000', category_id=1,
         #              image='https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/a/m/amsung-galaxy-z-fold-5-1tb.png')
         #
@@ -108,35 +103,3 @@ if __name__ == '__main__':
                  password = str(hashlib.md5('123456'.encode('utf-8')).hexdigest()))
         db.session.add(u)
         db.session.commit()
-=======
-        # p1 = Product(name = 'Samsung Galaxy Fold5', price = '51.990.000', category_id = 1,
-        #              image = 'https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/a/m/amsung-galaxy-z-fold-5-1tb.png')
-        #
-        # p2 = Product(name='iPhone 15 Pro Max', price='46.990.000', category_id=1,
-        #              image='https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-15-pro-256gb_1.png')
-        #
-        # p3 = Product(name='OPPO Find N3 5G', price='44.990.000', category_id=1,
-        #              image='https://cdn.tgdd.vn/Products/Images/42/302953/oppo-find-n3-vang-dong-thumb-600x600.jpg')
-        #
-        # p4 = Product(name='iPhone 15 Plus', price='34.990.000', category_id=1,
-        #              image='https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-hong-thumb-1-600x600.jpg')
-        #
-        # p5 = Product(name='OPPO Find X5 Pro 5G', price='32.990.000', category_id=1,
-        #              image='https://cdn.tgdd.vn/Products/Images/42/250622/oppo-find-x5-pro-trang-thumb-1-600x600.jpg')
-        #
-        # p6 = Product(name='ASUS ROG Phone 7 Ultimate', price='29.990.000', category_id=1,
-        #              image='https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/1/_/1_365-doc-quyuen.jpg')
-        #
-        # p7 = Product(name='MacBook Pro M2 Max 2023', price='92.990.000', category_id=2,
-        #              image='https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/1/6/16_m2_max.png')
-        #
-        # p8 = Product(name='Laptop Asus ROG Strix G18', price='70.990.000', category_id=2,
-        #              image='https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_15__3_18.png')
-        #
-        # p9 = Product(name='Laptop MSI Creator Z16', price='61.990.000', category_id=2,
-        #              image='https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/_/0/_0003_msi-creator-z16-a11uet-217vn-i7.jpg')
-        #
-        # db.session.add_all([p1, p2, p3, p4, p5, p6, p7, p8, p9])
-        db.session.commit()
-        # db.create_all()
->>>>>>> 33daaebf4c1d056d1a53ade8b6fd1f89ac3707b3

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import redirect
 from flask_admin.contrib.sqla import ModelView
 from flask_admin import Admin, BaseView, expose
@@ -15,29 +14,15 @@ class AuthenticatedBaseView(BaseView):
 class AuthenticatedModelView(ModelView):
     def is_accessible(self):
         return current_user.is_authenticated
-=======
-from flask_admin.contrib.sqla import ModelView
-from flask_admin import Admin, BaseView, expose
-from App import app, db
-from App.models import Category, Product
-
-admin = Admin(app = app, name = 'QUẢN TRỊ BÁN HÀNG', template_mode='bootstrap4')
->>>>>>> 33daaebf4c1d056d1a53ade8b6fd1f89ac3707b3
 
 class MyProductView(ModelView):
     column_list = ['id', 'name', 'price']
     can_export = True
     column_searchable_list = ['name']
-<<<<<<< HEAD
     column_filters = ['name', 'price']
-=======
-    column_filters = ['price', 'name']
->>>>>>> 33daaebf4c1d056d1a53ade8b6fd1f89ac3707b3
     column_editable_list = ['name', 'price']
     details_modal = True
     edit_modal = True
-
-<<<<<<< HEAD
 
 class MyCategoryView(ModelView):
     column_list = ['name', 'products']
@@ -59,16 +44,3 @@ admin.add_view(AuthenticatedModelView(Product, db.session, name = 'Sản phẩm'
 admin.add_view(StatsView(name = 'Báo cáo thống kê'))
 admin.add_view(AuthenticatedModelView(User, db.session, name = 'Người dùng'))
 admin.add_view(LogoutView(name = 'Đăng xuất'))
-=======
-class MyCategoryView(ModelView):
-    column_list = ['name', 'products']
-
-class StatsView(BaseView):
-    @expose("/")
-    def index(self):
-        return self.render('admin/stats.html')
-
-admin.add_view(MyCategoryView(Category, db.session))
-admin.add_view(MyProductView(Product, db.session))
-admin.add_view(StatsView(name = 'Báo cáo thống kê'))
->>>>>>> 33daaebf4c1d056d1a53ade8b6fd1f89ac3707b3

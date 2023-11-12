@@ -1,8 +1,6 @@
 {% extends 'admin/master.html' %}
 
 {% block body %}
-<<<<<<< HEAD
-
     {% if current_user.is_authenticated %}
     <h1 class="text-info">
         CHÀO MỪNG <span class="text-danger">{{ current_user.name }} </span> ĐẾN TRANG QUẢN TRỊ!</h1>
@@ -19,7 +17,4 @@
           <button type="submit" class="btn btn-primary">Đăng nhập</button>
     </form>
     {% endif %}
-=======
-<h1 class="text-center text-info">CHÀO MỪNG ĐẾN TRANG QUẢN TRỊ</h1>
->>>>>>> 33daaebf4c1d056d1a53ade8b6fd1f89ac3707b3
 {% endblock %}
