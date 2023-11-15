@@ -5,6 +5,7 @@
     <h1 class="text-info">
         CHÀO MỪNG <span class="text-danger">{{ current_user.name }} </span> ĐẾN TRANG QUẢN TRỊ!</h1>
     {% else %}
+    <h1 class="text-center text-info">ĐĂNG NHẬP QUẢN TRỊ</h1>
     <form method="post" action="/admin/login">
           <div class="mb-3 mt-3">
             <label for = "username" class="form-label">Tên đăng nhập:</label>
