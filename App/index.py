@@ -16,7 +16,8 @@ def index():
 
     num = dao.count_products()
 
-    return render_template('index.html', categories = cates, products = products)
+    return render_template('index.html', categories = cates, products = products,
+                           pages = math.ceil(num / app.config['PAGE_SIZE']))
 
 @app.route('/admin/login', methods = ['post'])
 def admin_login():
