@@ -23,7 +23,7 @@ def load_products(kw=None, cates_id = None, page = None):
 
     return products.all()
 
-def count_products():
+def count_product():
     return Product.query.count()
 
 def get_user_by_id(user_id):
