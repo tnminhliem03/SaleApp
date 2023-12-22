@@ -9,9 +9,9 @@
                 <img class="card-img-top" src="{{ p.image }}" alt="Card image" style="padding: 15px">
                 <div class="card-body">
                     <h5 class="card-title">{{ p.name }}</h5>
-                    <p style="color: red; font-weight: bold" class="card-text">{{ p.price }} VNĐ</p>
+                    <p style="color: red; font-weight: bold" class="card-text">{{ "{:,.0f}".format(p.price) }} VNĐ</p>
                     <a href="#" class="btn btn-primary">Xem chi tiết</a>
-                    <a href="#" class="btn btn-danger" onclick="addToCart({{ p.id }}, '{{ p.name }}', '{{ p.price }}')">Đặt hàng</a>
+                    <a href="#" class="btn btn-danger" onclick="addToCart({{ p.id }}, '{{ p.name }}', {{ p.price }})">Đặt hàng</a>
                 </div>
             </div>
         </div>
@@ -25,5 +25,4 @@
     </ul>
 </section>
 
-<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
 {% endblock %}
