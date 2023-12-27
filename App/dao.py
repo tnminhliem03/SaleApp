@@ -2,6 +2,7 @@ from App.models import Category, Product, User, Receipt, ReceiptDetails
 from App import app, db
 import hashlib
 from flask_login import current_user
+import cloudinary.uploader
 
 def load_categories():
     return Category.query.all()
@@ -46,3 +47,14 @@ def add_receipt(cart):
             db.session.add(d)
 
             db.session.commit()
+
+def add_user(name, username, password, avatar):
+    password = str(hashlib.md5(password.strip().encode('utf-8')).hexdigest())
+    u = User(name = name, username = username, password = password, avatar = 'https://cdn.sforum.vn/sforum/wp-content/uploads/2023/10/avatar-trang-2.jpg')
+
+    if avatar:
+        res = cloudinary.uploader.upload(avatar)
+        u.avatar = res['secure_url']
+
+    db.session.add(u)
+    db.session.commit()

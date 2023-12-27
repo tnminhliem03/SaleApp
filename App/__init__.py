@@ -14,3 +14,11 @@ app.config["PAGE_SIZE"] = 4
 
 db = SQLAlchemy(app = app)
 login = LoginManager(app = app)
+
+import cloudinary
+
+cloudinary.config(
+    cloud_name="dr1frcopo",
+    api_key="388823961895246",
+    api_secret="5MZV45WmN3WZOIurHEL6r3euMvI"
+)
